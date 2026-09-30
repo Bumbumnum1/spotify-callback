@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Redirecting...</title></head>
+<script>
+  const p = new URLSearchParams(window.location.search);
+  const code = p.get('code');
+  const error = p.get('error');
+  if (code) {
+    window.location.replace('http://localhost:8888/callback?code=' + code);
+  } else {
+    document.body.innerHTML = '<p>Spotify error: ' + error + '</p>';
+  }
+</script>
+<body><p>Redirecting to your local clock widget...</p></body>
+</html>
